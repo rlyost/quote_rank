@@ -1,0 +1,12 @@
+<div class='wrapper'>
+  <a [routerLink]="['/home']">Home</a>
+  <p>Edit this author:</p>
+  <form (submit)="onClickUpdate()" class="form-group postForm">
+    <label>Name:
+      <input type="hidden" name="author._id" [(ngModel)]="author._id" />
+      <input type='text' name='author.name' [(ngModel)]='author.name' placeholder='author.name' />
+    </label>
+    <input type="submit" class="btn btn-outline-primary btn-sm" value="Submit" />
+  </form>
+  <h3 style="color: red">{{ name_error }}</h3>
+</div>

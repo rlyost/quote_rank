@@ -1,0 +1,32 @@
+<div class='wrapper'>
+  <ul>
+    <li>
+      <a [routerLink]="['/home']" class='links'>Home</a>
+      <a [routerLink]="['/write', author._id]" class='links'>Add a quote</a>
+    </li>
+  </ul>
+
+  <p>Quotes by {{ author.name }}:</p>
+  <table margin="0 auto" width="100%" class="table table-bordered">
+    <tr>
+      <td>
+        <h3>Quote</h3>
+      </td>
+      <td>
+        <h3>Votes</h3>
+      </td>
+      <td>
+        <h3> Actions available</h3>
+      </td>
+    </tr>
+    <tr *ngFor="let quote of author.quotes">
+      <td>{{ quote.content }}</td>
+      <td>{{ quote.rank }}</td>
+      <td>
+        <button (click)="vote(quote._id, quote.rank, author._id, 'up')" class="btn btn-outline-primary btn-sm">Vote up</button>
+        <button (click)="vote(quote._id, quote.rank, author._id, 'down')" class="btn btn-outline-primary btn-sm">Vote down</button>
+        <button (click)="deleteQuote(author._id, quote._id)" class="btn btn-outline-primary btn-sm">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
