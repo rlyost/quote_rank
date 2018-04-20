@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.wrapper {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+.comp {
+    border: 3px solid black;
+}
+.links {
+    margin: 0 30px;
+}
+ul {
+    list-style-type: none;
+}

@@ -144,7 +144,7 @@ app.delete('/author/remove/:id', function (req, res) {
 
 //Catch all routing
 app.all("*", (req, res, next) => {
-    res.sendFile(path.resolve("./dist/index.html"))
+    res.sendFile(path.resolve("./client/dist/index.html"))
 });
 
 // Setting our Server to Listen on Port: 8033
